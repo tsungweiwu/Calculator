@@ -11,6 +11,7 @@ class KeypadComponent extends Component {
 					name="7"
 					value="7"
 					onClick={e => this.props.onClick(e.target.name)}
+					// catches for exceptions e in the prop and passes parameter of target name
 				/>
 				<input
 					className="form-group btn btn-default bttn"

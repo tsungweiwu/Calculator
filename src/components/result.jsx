@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class ResultComponent extends Component {
 	render() {
-		let { result } = this.props;
+		let { result } = this.props; // sets variable result as the prop's value
 		return (
 			<div>
 				<input
