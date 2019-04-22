@@ -11,6 +11,8 @@ class Calculator extends Component {
 	}
 
 	render() {
+		// or instead of using result.jsx you can include it into this page
+		// let { result } = this.props; // sets variable result as the prop's value
 		return (
 			<div className="container center_div">
 				<h1 className="text-center padding">Calculator</h1>
@@ -18,6 +20,16 @@ class Calculator extends Component {
 					<div className="calcontainer">
 						<form name="form">
 							<ResultComponent result={this.state.result} />
+
+							{/* ^ OR
+								<input
+								disabled
+								className="form-control"
+								id="panel"
+								name="panel"
+								value={this.state.result}
+							/> */}
+
 							<KeypadComponent onClick={this.onClick} />
 						</form>
 					</div>
@@ -44,6 +56,7 @@ class Calculator extends Component {
 		try {
 			this.setState({
 				// eslint-disable-next-line
+				// evaluates the string or output blank
 				result: (eval(this.state.result) || "") + ""
 			});
 		} catch (e) {
